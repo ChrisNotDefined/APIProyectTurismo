@@ -28,4 +28,17 @@ CityController.post = async (req, res) => {
   }
 }
 
+CityController.getById = async (req, res) => {
+  try {
+    const { cityId } = req.params;
+    const city = await CityModel.find({_id: cityId});
+    res.json(city);
+  } catch (error) {
+    console.log("Failed getiing ID: ");
+    res.status(500).json({
+      error
+    })
+  }
+}
+
 module.exports = CityController;
