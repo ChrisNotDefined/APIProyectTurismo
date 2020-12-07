@@ -31,7 +31,7 @@ CityController.post = async (req, res) => {
 CityController.getById = async (req, res) => {
   try {
     const { cityId } = req.params;
-    const city = await CityModel.find({_id: cityId});
+    const city = (await CityModel.find({_id: cityId}))[0];
     res.json(city);
   } catch (error) {
     console.log("Failed getiing ID: ");
