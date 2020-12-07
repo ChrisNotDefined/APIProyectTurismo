@@ -27,7 +27,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect(
-  'mongodb://localhost:27017/TurismoDB', {
+  //'mongodb://localhost:27017/TurismoDB',
+  'mongodb+srv://admin:123asdzxc@cluster0.9bsup.mongodb.net/TurismoDB?retryWrites=true&w=majority',
+  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
