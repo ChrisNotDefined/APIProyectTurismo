@@ -50,7 +50,7 @@ const queries = {
             error
           });
         } else {
-          res.json(destiny)
+          res.json(destiny[0])
         }
       })
     } catch (error) {
